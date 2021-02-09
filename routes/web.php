@@ -24,10 +24,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 // route1
 
 Route::prefix('free-zone')->group(function () {
+
     Route::get('hello', 'TestController@guest')->name('hello_free');
+    
+    // Route post
+    Route::get('/post', 'TestController@index')->name('post');
 });
 
 // route2
 Route::prefix('restrict-zone')->middleware('auth')->group(function () {
     Route::get('hello', 'TestController@logged')->name('private');
+
+    Route::get('create', 'TestController@create')->name('create');
+
+    Route::post('update', 'TestController@store')->name('update');
+
 });
+
+

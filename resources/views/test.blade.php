@@ -7,3 +7,5 @@
         {{$message}}
     </span>
 </div>
+
+@endsection

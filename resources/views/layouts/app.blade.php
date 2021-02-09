@@ -89,6 +89,18 @@
                             Prova la rotta libera
                         </a>
                     </button>
+
+                    <button class="btn btn-secondary m-4">
+                        <a href="{{ route("post") }}" style="color: white">
+                            Vedi gli ultimi post
+                        </a>
+                    </button>
+
+                    <button class="btn btn-secondary m-4">
+                        <a href="{{ route("create") }}" style="color: white">
+                            Nuovo Post
+                        </a>
+                    </button>
                 </div>
             </div>
 
