@@ -23,22 +23,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // route1
 
-Route::prefix('free-zone')->group(function () {
+Route::resource('/posts', 'PostController');
 
-    Route::get('hello', 'TestController@guest')->name('hello_free');
+// Route::prefix('free-zone')->group(function () {
+
+//     Route::get('hello', 'TestController@guest')->name('hello_free');
     
-    // Route post
-    Route::get('/post', 'TestController@index')->name('post');
-});
+//     // Route post
+//     Route::get('/post', 'TestController@index')->name('home');
+// });
 
-// route2
-Route::prefix('restrict-zone')->middleware('auth')->group(function () {
-    Route::get('hello', 'TestController@logged')->name('private');
+// // route2
+// Route::prefix('restrict-zone')->middleware('auth')->group(function () {
+//     Route::get('hello', 'TestController@logged')->name('private');
 
-    Route::get('create', 'TestController@create')->name('create');
+//     Route::resource('post', 'TestController');
 
-    Route::post('update', 'TestController@store')->name('update');
-
-});
+// });
 
 

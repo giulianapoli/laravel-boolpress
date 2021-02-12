@@ -13,7 +13,10 @@ class CategorySeeder extends Seeder
     public function run()
     {
         factory(Category::class, 20)->create()->each(function ($id) {
-            $id->save();
+            $id->save(); // questo non servirebbe
         });
     }
 }
+
+
+//v. appunti db seeder 
