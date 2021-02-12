@@ -13,11 +13,6 @@ class Post extends Model
     */
     protected $fillable = ['title', 'author', 'category_id'];
 
-
-    
-    //$a = ['title' => 'a', 'author' => 'b', 'category_id' => 12];
-    //Post::create($a);
-
     protected $table = 'posts';
 
     public function postToCategory() {

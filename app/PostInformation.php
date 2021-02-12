@@ -13,7 +13,7 @@ class PostInformation extends Model
     */
     protected $fillable = ['description', 'post_id', 'slug'];
 
-    protected $guarded = array();
+    
     protected $table = 'posts_information';
 
     public function postInformation() {
