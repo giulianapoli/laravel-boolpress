@@ -9,6 +9,7 @@ use App\Post;
 use App\Tag;
 use App\Category;
 use App\PostInformation;
+use App\Http\Requests\PostValidator;
 
 
 class PostController extends Controller
@@ -70,29 +71,28 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostValidator $request)
     {
-        $data = $request->all();
+        $validated = $request->validated();
 
-        // $request->validate([
-        //     'title' => 'required | string | min: 3',
-        //     'author' => 'required | string | min: 3', 
-        // ]);
+        // dd($validated);
 
-        $newpost = Post::create([   // create salva in automatico i dati, non ci va save
-            'title' => $data['title'],
-            'author' => $data['author'],
-            'category_id' => $data['categories'],
+        $newpost = Post::create([
+            'title' => $validated['title'],
+            'author' => $validated['author'],
+            'category_id' => $validated['categories'],
         ]);
         
+        
+
         $newPostInformation = PostInformation::create([
             'post_id' => $newpost->id,
-            'description' => $data['description'],
+            'description' => $validated['description'],
             'slug' => 'I am a Slug!'        
         ]);
 
 
-        $newpost->postToTag()->attach($data['tags']);
+        $newpost->postToTag()->attach($validated['tags']);
 
         return redirect()->route('posts.index');
     }
