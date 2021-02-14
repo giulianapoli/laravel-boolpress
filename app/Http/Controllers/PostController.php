@@ -148,7 +148,7 @@ class PostController extends Controller
 
         $post->update($data);
 
-        // $post->postInformation->update($data);
+        $post->postToPostInformation->update($data);
         
 
         return redirect()->route('home');

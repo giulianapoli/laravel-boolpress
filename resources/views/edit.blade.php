@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-8 offset-2">
 
-                <form action="{{ route("post.update",$post->id) }}" method="POST">
+                <form action="{{ route("posts.update",$post->id) }}" method="POST">
                     @csrf
                     @method("PUT")
                     <div class="mb-3">
@@ -13,7 +13,7 @@
                         <input value="{{ $post->title }}" type="text"name="title" type="text" class="form-control" id="title" >
 
                     </div>
-                    <textarea class="form-control mt-5 mb-5" name="details" id="details" cols="30" rows="10">{{ $post->postInformation->description }}
+                    <textarea class="form-control mt-5 mb-5" name="details" id="details" cols="30" rows="10">{{ $post->postToPostInformation->description }}
                     </textarea>
 
 
