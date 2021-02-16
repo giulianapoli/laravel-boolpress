@@ -14,24 +14,11 @@ use App\Http\Requests\PostValidator;
 
 class PostController extends Controller
 {
-    // public function __construct() {
-    //     $this->middleware('auth', ['except' => [
-    //         'index', 'show'
-    //     ]]);
-    // }
-
-    // public function guest() {
-    //     $message = 'Welcome!';
-
-    //     return view('test', compact('message'));
-    // }
-
-    // public function logged() {
-    //     $user = Auth::user();
-    //     $message = 'Welcome, '.$user->name;
-
-    //     return view('test', compact('message'));
-    // }
+    public function __construct() {
+        $this->middleware('auth', ['except' => [
+            'index', 'show'
+        ]]);
+    }
 
     /**
      * Display a listing of the resource.
@@ -57,12 +44,9 @@ class PostController extends Controller
 
         $categories = Category::all();
 
-        if (Auth::check()) {
-            $user = Auth::user();
-            return view('create', compact(['categories', 'tags', 'user']));
-          } else {
-            return redirect()->route('posts.index');
-          }
+        $user = Auth::user();
+
+        return view('create', compact(['categories', 'tags', 'user']));
     }
 
     /**
@@ -74,8 +58,6 @@ class PostController extends Controller
     public function store(PostValidator $request)
     {
         $validated = $request->validated();
-
-        // dd($validated);
 
         $newpost = Post::create([
             'title' => $validated['title'],
@@ -107,8 +89,6 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        
-
         return view('watch_post', compact('post'));
     }
 
@@ -120,17 +100,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        // $post = Post::find($id);
 
-        // $tags = Tag::all();
-
-        // $category = Category::all();
-
-        if (Auth::check()) {
-            return view("edit",compact("post"));
-        } else {
-            return redirect()->back();
-        }
+        return view("edit",compact("post"));
     }
 
       /**

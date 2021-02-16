@@ -26,7 +26,7 @@
                     @csrf
                     @method('delete')
                     <button type="submit">Elimina</button>
-                  </form>
+                </form>
             </div>
             
             {{-- <form method="GET" action="{{ route('post.edit', $post) }}">

@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css.layout.css">
+
 </head>
 <body>
     <div id="app">
@@ -71,34 +73,8 @@
                 </div>
             </div>
         </nav>
-
+       
         <main class="py-4">
-
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    {{-- @if (Auth::check())
-                    <button class="btn btn-primary m-4">
-                        <a class="mr-5" href="{{ route("private") }}"
-                        style="color: white">
-                            Prova la rotta privata
-                        </a>
-                    </button>
-                    @endif  --}}
-                    {{-- <button class="btn btn-secondary m-4">
-                        <a href="{{ route("hello_free") }}" style="color: white">
-                            Prova la rotta libera
-                        </a>
-                    </button> --}}
-
-                    {{-- <button class="btn btn-secondary m-4">
-                        <a href="{{ route("home") }}" style="color: white">
-                            Vedi gli ultimi post
-                        </a>
-                    </button> --}}
-
-                    
-                </div>
-            </div>
 
             @yield('content')
         </main>
