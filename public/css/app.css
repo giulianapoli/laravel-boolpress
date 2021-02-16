@@ -10944,3 +10944,21 @@ a.text-dark:focus {
   }
 }
 
+.post_card {
+  margin-left: 50px;
+  width: 20%;
+  background-color: purple;
+  border-radius: 5px;
+}
+
+.post_card > * {
+  padding: 10px;
+}
+
+.post_details {
+  width: 70%;
+  border-radius: 10px;
+  margin: auto;
+  background-color: purple;
+}
+
