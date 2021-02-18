@@ -9,7 +9,7 @@
     <div class='row d-flex'>
        
         @foreach($posts as $post)
-            <div class="col-4 post_card d-flex flex-column mb-4">
+            <div class="col-3 post_card d-flex flex-column mb-4">
 
                 
                 <div>
