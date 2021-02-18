@@ -1971,7 +1971,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['posts'],
   mounted: function mounted() {
     console.log('Component mounted.');
   }
@@ -1988,9 +1993,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -37631,28 +37633,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c(
+        "div",
+        { staticClass: "col-md-8" },
+        _vm._l(_vm.posts, function(ref) {
+          var title = ref.title
+          var author = ref.author
+          var id = ref.id
+          return _c("div", { key: id, staticClass: "card" }, [
             _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
+              _vm._v(
+                "\n                    " + _vm._s(title) + "\n                "
+              )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" })
+            _c("div", { staticClass: "card-body" }, [
+              _vm._v(
+                "\n                    " + _vm._s(author) + "\n                "
+              )
+            ])
           ])
-        ])
-      ])
+        }),
+        0
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37729,11 +37738,7 @@ var staticRenderFns = [
         staticClass: "collapse navbar-collapse",
         attrs: { id: "navbarSupportedContent" }
       },
-      [
-        _c("ul", { staticClass: "navbar-nav mr-auto" }),
-        _vm._v(" "),
-        _c("ul", { staticClass: "navbar-nav ml-auto" })
-      ]
+      [_c("ul", { staticClass: "navbar-nav mr-auto" })]
     )
   }
 ]

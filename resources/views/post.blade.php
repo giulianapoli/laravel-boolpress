@@ -7,8 +7,12 @@
         <a class="p-5" href="{{route("posts.create")}}">Nuovo Post</a>
     </div>
     <div class='row d-flex'>
+        <example-component
+        :posts="{{$posts}}"
+        >
+        </example-component>
        
-        @foreach($posts as $post)
+        {{-- @foreach($posts as $post)
             <div class="col-3 post_card d-flex flex-column mb-4">
 
                 
@@ -40,7 +44,7 @@
                     </div>
                 
             </div>
-        @endforeach
+        @endforeach --}}
     </div>
 </div>
 @endsection

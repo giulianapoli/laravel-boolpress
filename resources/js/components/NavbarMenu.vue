@@ -16,10 +16,7 @@
         
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        
-                    </ul>
+                    
                 </div>
             </div>
         </nav>
