@@ -1975,10 +1975,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      img: [],
+      authorization: '563492ad6f9170000100000143bbdc5af21e4ec6866c73937210208e',
+      basePath: 'https://api.pexels.com/v1/photos/313690'
+    };
+  },
   props: ['posts'],
   mounted: function mounted() {
-    console.log('Component mounted.');
+    var _this = this;
+
+    axios.get(this.basePath, {
+      headers: {
+        'Authorization': this.authorization,
+        page: this.page
+      }
+    }).then(function (response) {
+      return _this.img = response.data;
+    });
   }
 });
 
@@ -37638,25 +37661,35 @@ var render = function() {
       _c(
         "div",
         { staticClass: "col-md-8" },
-        _vm._l(_vm.posts, function(ref) {
-          var title = ref.title
-          var author = ref.author
-          var id = ref.id
-          return _c("div", { key: id, staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v(
-                "\n                    " + _vm._s(title) + "\n                "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    " + _vm._s(author) + "\n                "
-              )
+        [
+          _vm._l(_vm.posts, function(ref) {
+            var title = ref.title
+            var author = ref.author
+            var id = ref.id
+            return _c("div", { key: id, staticClass: "card" }, [
+              _c("div", { staticClass: "card-header" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(title) +
+                    "\n                "
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(author) +
+                    "\n                "
+                )
+              ])
             ])
-          ])
-        }),
-        0
+          }),
+          _vm._v(" "),
+          _vm.img.src.medium != null
+            ? _c("img", { attrs: { src: _vm.img.src.medium, alt: "" } })
+            : _c("p", [_vm._v("Loading img")])
+        ],
+        2
       )
     ])
   ])
