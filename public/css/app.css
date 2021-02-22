@@ -10944,10 +10944,13 @@ a.text-dark:focus {
   }
 }
 
+.card-body {
+  padding: 0px;
+}
+
 .post_card {
   margin-left: 50px;
   width: 20%;
-  background-color: purple;
   border-radius: 5px;
 }
 
@@ -10959,6 +10962,13 @@ a.text-dark:focus {
   width: 70%;
   border-radius: 10px;
   margin: auto;
-  background-color: purple;
+  position: relative;
+}
+
+.img-size {
+  max-width: 100%;
+  max-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 

@@ -1982,6 +1982,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37657,39 +37661,45 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
+    _c("div", { staticClass: "row d-flex" }, [
       _c(
         "div",
-        { staticClass: "col-md-8" },
+        {
+          staticClass:
+            "col-12 d-inline flex-wrap d-flex justify-content-between"
+        },
         [
-          _vm._l(_vm.posts, function(ref) {
-            var title = ref.title
-            var author = ref.author
-            var id = ref.id
-            return _c("div", { key: id, staticClass: "card" }, [
-              _c("div", { staticClass: "card-header" }, [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(title) +
-                    "\n                "
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(author) +
-                    "\n                "
-                )
-              ])
-            ])
-          }),
-          _vm._v(" "),
-          _vm.img.src.medium != null
-            ? _c("img", { attrs: { src: _vm.img.src.medium, alt: "" } })
-            : _c("p", [_vm._v("Loading img")])
-        ],
-        2
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.posts, function(ref) {
+              var title = ref.title
+              var author = ref.author
+              var id = ref.id
+              return _c(
+                "div",
+                { key: id, staticClass: "card col-3 p-0 m-2 rounded" },
+                [
+                  _c("div", { staticClass: "card-header " }, [
+                    _c("p", [_vm._v(_vm._s(author))])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _vm.img.src.medium != null
+                      ? _c("img", {
+                          staticClass: "img-size rounded",
+                          attrs: { src: _vm.img.src.medium, alt: "" }
+                        })
+                      : _c("p", [_vm._v("Loading img")]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(title))])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ]
       )
     ])
   ])
